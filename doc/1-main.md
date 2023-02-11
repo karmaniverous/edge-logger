@@ -51,7 +51,7 @@ logger.debug('debug message');                     // rendered with console.debu
 
 Set your minimum logging level with environment variable `LOG_LEVEL` (by default it is `info`).
 
-The constructor `config` object has the following keys:
+The optional constructor `config` argument has the following keys:
 
 | Key        | Description                                                                        |
 | ---------- | ---------------------------------------------------------------------------------- |
