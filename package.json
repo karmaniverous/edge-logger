@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/karmaniverous/edge-logger/issues"
   },
-  "description": "",
+  "description": "A simple logging class that renders nicely-formatted logs and plays nicely with edge networks.",
   "homepage": "https://github.com/karmaniverous/edge-logger#readme",
   "keywords": [
     "edge",
@@ -65,7 +65,7 @@
       "release": true
     },
     "npm": {
-      "publish": false
+      "publish": true
     }
   },
   "scripts": {
