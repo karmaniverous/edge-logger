@@ -16,7 +16,8 @@
   "homepage": "https://github.com/karmaniverous/edge-logger#readme",
   "keywords": [
     "edge",
-    "logging"
+    "logging",
+    "nextjs"
   ],
   "license": "BSD-3-Clause",
   "dependencies": {
