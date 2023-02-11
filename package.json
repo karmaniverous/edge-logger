@@ -1,6 +1,9 @@
 {
   "name": "@karmaniverous/edge-logger",
   "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/karmaniverous/edge-logger"
