@@ -18,6 +18,7 @@
     "edge",
     "logging"
   ],
+  "license": "BSD-3-Clause",
   "dependencies": {
     "lodash.isarraylikeobject": "^4.2.0",
     "lodash.isnumber": "^3.0.3",
