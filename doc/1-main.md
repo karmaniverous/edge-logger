@@ -55,7 +55,7 @@ The optional constructor `config` argument has the following keys:
 
 | Key        | Description                                                                        |
 | ---------- | ---------------------------------------------------------------------------------- |
-| `envLevel` | Minimum logging level. Default value `process.env.LOG_LEVEL` or 'info' if not set. |
+| `envLevel` | Minimum logging level. Default value `process.env.LOG_LEVEL` or `info` if not set. |
 | `levels`   | An alternate levels definition. See below for details.                             |
 
 ### Levels Config
