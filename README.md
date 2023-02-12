@@ -53,10 +53,10 @@ Set your minimum logging level with environment variable `LOG_LEVEL` (by default
 
 The optional constructor `config` argument has the following keys:
 
-| Key        | Description                                                                        |
-| ---------- | ---------------------------------------------------------------------------------- |
-| `envLevel` | Minimum logging level. Default value `process.env.LOG_LEVEL` or `info` if not set. |
-| `levels`   | An alternate levels definition. See below for details.                             |
+| Key        | Description                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| `maxLevel` | Maximum logging level. Default value set in `levels` object (`info` for default `levels`). |
+| `levels`   | An alternate levels definition. See below for details.                                     |
 
 ### Levels Config
 
@@ -70,7 +70,7 @@ Here is the default levels object:
   err: { value: 3, console: 'error' },
   warning: { value: 4, console: 'warn' },
   notice: { value: 5, console: 'info' },
-  info: { value: 6, console: 'info' },
+  info: { value: 6, console: 'info', defaultMax: true },
   debug: { value: 7, console: 'debug' },
 }
 ```
@@ -79,10 +79,11 @@ Each key will be rendered as a function on the `Logger` instance that takes a li
 
 The keys on each log level:
 
-| Key       | Description                                    |
-| --------- | ---------------------------------------------- |
-| `value`   | Supports setting the logging threshold.        |
-| `console` | The console function invoked by the log level. |
+| Key          | Description                                    |
+| ------------ | ---------------------------------------------- |
+| `value`      | Supports setting the logging threshold.        |
+| `console`    | The console function invoked by the log level. |
+| `defaultMax` | `true` if default max level.                   |
 
 # API Documentation
 
