@@ -26,7 +26,7 @@ const logger = new Logger([config]);
 logger.emerg('emergency message', { foo: 'bar' }); // rendered with console.error()
 logger.alert('alert message');                     // rendered with console.error()
 logger.crit('critical message');                   // rendered with console.error()
-logger.err('error message');                       // rendered with console.error()
+logger.error('error message');                     // rendered with console.error()
 logger.warning('warning message');                 // rendered with console.warn()
 logger.notice('notice message');                   // rendered with console.info()
 logger.info('info message');                       // rendered with console.info()
@@ -38,7 +38,7 @@ logger.debug('debug message');                     // rendered with console.debu
 // emerg:   }
 // alert:   alert message
 // crit:    critical message
-// err:     error message
+// error:   error message
 // warning: warning message
 // notice:  notice message
 // info:    info message
@@ -67,7 +67,7 @@ Here is the default levels object:
   emerg: { value: 0, console: 'error' },
   alert: { value: 1, console: 'error' },
   crit: { value: 2, console: 'error' },
-  err: { value: 3, console: 'error' },
+  error: { value: 3, console: 'error' },
   warning: { value: 4, console: 'warn' },
   notice: { value: 5, console: 'info' },
   info: { value: 6, console: 'info', defaultMax: true },
