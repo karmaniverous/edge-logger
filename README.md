@@ -85,11 +85,6 @@ The keys on each log level:
 | `console`    | The console function invoked by the log level. |
 | `defaultMax` | `true` if default max level.                   |
 
-# API Documentation
-
-`TODO`
-
-
 ---
 
 See more great templates and other tools on
