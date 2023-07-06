@@ -21,7 +21,7 @@ npm install @karmaniverous/edge-logger
 
 ```js
 import Logger from `@karmaniverous/edge-logger`;
-const logger = new Logger([config]);
+const logger = new Logger();
 
 logger.emerg('emergency message', { foo: 'bar' }); // rendered with console.error()
 logger.alert('alert message');                     // rendered with console.error()
@@ -31,6 +31,7 @@ logger.warning('warning message');                 // rendered with console.warn
 logger.notice('notice message');                   // rendered with console.info()
 logger.info('info message');                       // rendered with console.info()
 logger.debug('debug message');                     // rendered with console.debug()
+logger.log('log message');                     // rendered with console.info()
 
 // emerg:   emergency message
 // emerg:   {
@@ -42,6 +43,7 @@ logger.debug('debug message');                     // rendered with console.debu
 // warning: warning message
 // notice:  notice message
 // info:    info message
+// info:    log message
 
 // debug level not rendered by default.
 // Set LOG_LEVEL to 'debug' to see these.
@@ -53,10 +55,11 @@ Set your minimum logging level with environment variable `LOG_LEVEL` (by default
 
 The optional constructor `config` argument has the following keys:
 
-| Key        | Description                                                                                |
-| ---------- | ------------------------------------------------------------------------------------------ |
-| `maxLevel` | Maximum logging level. Default value set in `levels` object (`info` for default `levels`). |
-| `levels`   | An alternate levels definition. See below for details.                                     |
+| Key            | Description                                                                                                              |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `defaultLevel` | Default logging level (invoked by the `log` method). Default value set in `levels` object (`info` for default `levels`). |
+| `maxLevel`     | Maximum logging level. Default value set in `levels` object (`info` for default `levels`).                               |
+| `levels`       | An alternate levels definition. See below for details.                                                                   |
 
 ### Levels Config
 
@@ -70,7 +73,7 @@ Here is the default levels object:
   error: { value: 3, console: 'error' },
   warning: { value: 4, console: 'warn' },
   notice: { value: 5, console: 'info' },
-  info: { value: 6, console: 'info', defaultMax: true },
+  info: { value: 6, console: 'info', default: true, defaultMax: true },
   debug: { value: 7, console: 'debug' },
 }
 ```
@@ -79,11 +82,12 @@ Each key will be rendered as a function on the `Logger` instance that takes a li
 
 The keys on each log level:
 
-| Key          | Description                                    |
-| ------------ | ---------------------------------------------- |
-| `value`      | Supports setting the logging threshold.        |
-| `console`    | The console function invoked by the log level. |
-| `defaultMax` | `true` if default max level.                   |
+| Key          | Description                                           |
+| ------------ | ----------------------------------------------------- |
+| `value`      | Supports setting the logging threshold.               |
+| `console`    | The console function invoked by the log level.        |
+| `default`    | `true` if the `log` method should trigger this level. |
+| `defaultMax` | `true` if default max level.                          |
 
 ---
 
